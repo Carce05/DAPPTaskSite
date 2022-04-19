@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Task DAPP</title>
+</head>
+
+<body>
+    <div class="container py-5">
+
+
+        <div class="row">
+            <div class="col-md-4   ">
+                <div class="card card-body  mb-4 bg-dark" style="border-radius: 6% 0% / 6% 0%;">
+                    <h1>DECENTRALICED APP</h1>
+                    <h6 class="text-muted">Decentraliced Task App</h6>
+                    <span>Your ETH Wallet: </span>
+                    <span id="account" style="color: dodgerblue;" onload="myFunction()"></span>
+                </div>
+
+                <form class="card card-cody bg-dark " id="taskForm" style="border-radius: 6% 0% / 6% 0%;">
+                    <h4>   Create a task</h4>
+
+                    <input 
+                        type="text" 
+                        name="title"
+                        placeholder="Write a Task" 
+                        class="form-control bg-dark text-white rounded-0 border-0 my-4"
+                        autofocus
+                        />
+
+
+                    <textarea 
+                        rows="2" 
+                        name="description"
+                        class="form-control bg-dark text-white rounded-0 border-0 my-4"
+                        placeholder="I have to do..."
+                        ></textarea>
+
+
+                    <button 
+                        class="btn btn-primary" style="border-radius: 6% 0% / 30% 0%;">Save
+                    </button>
+
+                </form>
+            </div>
+
+
+            <div class="col-md-8 ">
+                <div id="tasksList">
+                    task list
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Scripts-->
+
+    <script src="./libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./ui.js"></script>
+
+    <script>function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+      
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+      
+         /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+      
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }</script>
+
+
+</body>
+
+</html>
